@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mukeshverse - Page 12</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: 'Georgia', serif;
+    background:
+      radial-gradient(ellipse at 50% 45%, rgba(111,35,160,.45), transparent 55%),
+      radial-gradient(ellipse at 15% 20%, #172d68, transparent 45%),
+      radial-gradient(ellipse at 85% 80%, #5b174e, transparent 45%),
+      linear-gradient(135deg, #030513, #100727, #02040f);
+    color: white;
+}
+
+/* Galaxy background */
+.galaxy {
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(2px 2px at 10% 20%, white, transparent),
+      radial-gradient(2px 2px at 80% 15%, white, transparent),
+      radial-gradient(2px 2px at 40% 75%, white, transparent),
+      radial-gradient(2px 2px at 65% 55%, white, transparent),
+      radial-gradient(2px 2px at 90% 85%, white, transparent),
+      radial-gradient(1px 1px at 25% 45%, white, transparent);
+    background-size: 180px 180px;
+    animation: stars 18s linear infinite;
+    z-index: -1;
+}
+
+@keyframes stars {
+    from { transform: translateY(0); }
+    to { transform: translateY(-180px); }
+}
+
+/* Birthday glow */
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.cake {
+    font-size: clamp(75px, 13vw, 125px);
+    filter: drop-shadow(0 0 25px #ff9bda);
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.small-title {
+    margin-top: 20px;
+    color: #ffe5a8;
+    font-size: clamp(15px, 3vw, 23px);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin-top: 25px;
+    font-size: clamp(35px, 8vw, 76px);
+    line-height: 1.2;
+    font-weight: bold;
+    background: linear-gradient(90deg, #fff2b0, #ff83d4, #ffffff, #ffc76c);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 5s linear infinite, glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes shine {
+    from { background-position: 0%; }
+    to { background-position: 300%; }
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 8px #ff74d4); }
+    to { filter: drop-shadow(0 0 28px #ffd37d); }
+}
+
+.message {
+    margin-top: 22px;
+    color: #f6dff7;
+    font-size: clamp(16px, 3vw, 22px);
+    letter-spacing: 2px;
+}
+
+.line {
+    width: min(350px, 75%);
+    height: 2px;
+    margin-top: 28px;
+    background: linear-gradient(90deg, transparent, #ffb8ed, #ffe7a6, transparent);
+    box-shadow: 0 0 15px #ff9ee8;
+}
+
+.next-btn {
+    margin-top: 45px;
+    padding: 15px 48px;
+    border: 1px solid #ffd7f7;
+    border-radius: 40px;
+    color: white;
+    background: linear-gradient(100deg, #8d3db7, #d44f9c);
+    font-size: 16px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    box-shadow: 0 0 25px #c34ba8;
+    transition: .3s;
+}
+
+.next-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px #ff8de1;
+}
+
+/* Floating sparkles */
+.sparkle {
+    position: fixed;
+    bottom: -30px;
+    pointer-events: none;
+    animation: floatUp linear infinite;
+    opacity: 0;
+    z-index: 1;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+/* Firework flashes */
+.flash {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #fff4b5;
+    box-shadow: 0 0 35px 15px #ff79d4;
+    animation: firework 3s ease-out infinite;
+    opacity: 0;
+}
+
+.flash.one { top: 20%; left: 15%; }
+.flash.two { top: 25%; right: 15%; animation-delay: 1s; }
+.flash.three { bottom: 18%; left: 20%; animation-delay: 2s; }
+
+@keyframes firework {
+    0%, 100% { transform: scale(0); opacity: 0; }
+    15% { transform: scale(1); opacity: 1; }
+    40% { transform: scale(0); opacity: 0; }
+}
+
+@media(max-width: 600px) {
+    .small-title { letter-spacing: 3px; }
+    .message { letter-spacing: 1px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="galaxy"></div>
+
+<div class="flash one"></div>
+<div class="flash two"></div>
+<div class="flash three"></div>
+
+<div class="container">
+    <div class="cake">🎂</div>
+
+    <div class="small-title">A Special Day For You</div>
+
+    <h1>
+        ONCE AGAIN,<br>
+        HAPPIEST<br>
+        BIRTHDAY!!!
+    </h1>
+
+    <div class="line"></div>
+
+    <p class="message">
+        🥳❤️ Keep Smiling & Keep Shining ✨
+    </p>
+
+    <button class="next-btn" onclick="goNext()">NEXT →</button>
+</div>
+
+<script>
+const emojis = ["✨", "⭐", "💖", "🌟", "🎉", "💫"];
+
+for (let i = 0; i < 35; i++) {
+    const star = document.createElement("div");
+    star.className = "sparkle";
+    star.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (5 + Math.random() * 8) + "s";
+    star.style.animationDelay = (Math.random() * 8) + "s";
+    star.style.fontSize = (15 + Math.random() * 22) + "px";
+    document.body.appendChild(star);
+}
+
+function goNext() {
+    window.location.href = "page13.html";
+}
+</script>
+
+</body>
+</html>

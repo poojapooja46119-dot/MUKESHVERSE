@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUKESHVERSE - Memories</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    background:
+        linear-gradient(rgba(3,4,25,0.3), rgba(3,4,25,0.5)),
+        url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1920")
+        center/cover no-repeat;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#b9a4ff 1px, transparent 1px);
+    background-size: 90px 90px, 130px 130px;
+    animation: sparkle 7s linear infinite;
+}
+
+@keyframes sparkle {
+    from { transform: translateY(0); }
+    to { transform: translateY(-45px); }
+}
+
+/* FLOATING PLANETS */
+
+.planet {
+    position: fixed;
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+}
+
+.planet-one {
+    width: 85px;
+    height: 85px;
+    top: 13%;
+    left: 8%;
+    background: radial-gradient(circle at 30% 30%, #ffd6a5, #e879a9, #7544a5);
+    box-shadow: 0 0 35px #c77dff;
+}
+
+.planet-two {
+    width: 55px;
+    height: 55px;
+    top: 68%;
+    left: 17%;
+    background: radial-gradient(circle at 30% 30%, #b8f3ff, #4787c7, #24245d);
+    box-shadow: 0 0 25px #75c9ff;
+    animation-delay: 1s;
+}
+
+.planet-three {
+    width: 100px;
+    height: 100px;
+    top: 17%;
+    right: 9%;
+    background: radial-gradient(circle at 30% 30%, #ffe2a8, #d97757, #713b82);
+    box-shadow: 0 0 35px #ffadad;
+    animation-delay: 2s;
+}
+
+.planet-three::after {
+    content: "";
+    position: absolute;
+    width: 145px;
+    height: 35px;
+    border: 5px solid rgba(255,210,180,0.65);
+    border-radius: 50%;
+    top: 32px;
+    left: -25px;
+    transform: rotate(-25deg);
+}
+
+.planet-four {
+    width: 65px;
+    height: 65px;
+    bottom: 10%;
+    right: 17%;
+    background: radial-gradient(circle at 30% 30%, #e3c7ff, #805ad5, #30205c);
+    box-shadow: 0 0 30px #a78bfa;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-18px) rotate(8deg); }
+}
+
+/* SIDE WRITINGS */
+
+.side-wish {
+    position: fixed;
+    z-index: 3;
+    width: 210px;
+    text-align: center;
+    color: #f5e7ff;
+    font-size: 17px;
+    line-height: 1.8;
+    text-shadow: 0 0 12px #c084fc;
+    top: 47%;
+    transform: translateY(-50%);
+    animation: glow 3s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+.left-wish {
+    left: 3%;
+}
+
+.right-wish {
+    right: 3%;
+}
+
+.side-wish span {
+    display: block;
+    margin-top: 12px;
+    color: #ffc9ee;
+    font-size: 20px;
+}
+
+@keyframes glow {
+    from { opacity: 0.75; }
+    to { opacity: 1; }
+}
+
+/* MAIN CONTENT */
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+#introSection {
+    max-width: 650px;
+}
+
+.message {
+    font-size: 18px;
+    line-height: 2.3;
+    color: #eee5ff;
+    margin-bottom: 32px;
+}
+
+button {
+    padding: 14px 30px;
+    border: 1px solid #e5c7ff;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #6d28d9, #c026d3);
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 25px #c084fc;
+}
+
+/* VIDEO */
+
+#memorySection {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.video-frame {
+    width: fit-content;
+    padding: 5px;
+    border-radius: 22px;
+    border: 1px solid rgba(235,210,255,0.85);
+    background: rgba(20,10,45,0.45);
+    box-shadow:
+        0 0 20px rgba(192,132,252,0.5),
+        0 0 45px rgba(100,70,200,0.3);
+    overflow: hidden;
+}
+
+video {
+    display: block;
+    width: auto;
+    height: 65vh;
+    max-height: 65vh;
+    max-width: 35vw;
+    object-fit: contain;
+    border-radius: 16px;
+    background: #111;
+}
+
+#endSection {
+    display: none;
+}
+
+#endSection h1 {
+    font-size: 35px;
+    color: #f5d6ff;
+    text-shadow: 0 0 20px #c084fc;
+    margin-bottom: 25px;
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+    .side-wish {
+        width: 125px;
+        font-size: 12px;
+    }
+
+    .left-wish { left: 1%; }
+    .right-wish { right: 1%; }
+
+    .side-wish span {
+        font-size: 14px;
+    }
+
+    .planet-one {
+        width: 45px;
+        height: 45px;
+    }
+
+    .planet-two {
+        width: 35px;
+        height: 35px;
+    }
+
+    .planet-three {
+        width: 55px;
+        height: 55px;
+    }
+
+    .planet-four {
+        width: 40px;
+        height: 40px;
+    }
+
+    video {
+        height: 58vh;
+        max-height: 58vh;
+        max-width: 48vw;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<!-- PLANETS -->
+<div class="planet planet-one"></div>
+<div class="planet planet-two"></div>
+<div class="planet planet-three"></div>
+<div class="planet planet-four"></div>
+
+<!-- SIDE WRITINGS -->
+<div class="side-wish left-wish">
+    Eppovum happy-ah iru...
+</div>
+
+<div class="side-wish right-wish">
+    Edhaiyum nenachi feel pannama iru...
+    <span>My Dearrr! ❤️</span>
+</div>
+
+<div class="container">
+
+    <div id="introSection">
+        <div class="message">
+            Sila neram, unakke theriyama happy-ah iru…<br>
+            Edhaiyum nenachu feel pannama,<br>
+            Chinna chinna moments-ah enjoy pannu.<br>
+            Eppovum ippadiye happy-ah iru! ❤️
+        </div>
+
+        <button onclick="startMemories()">
+            WATCH YOUR MEMORIES →
+        </button>
+    </div>
+
+    <div id="memorySection">
+        <div class="video-frame">
+            <video id="memoryVideo" controls playsinline>
+                <source src="mmm.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+    </div>
+
+    <div id="endSection">
+        <h1>That's not the end... ❤️</h1>
+        <button onclick="goNext()">NEXT SURPRISE →</button>
+    </div>
+
+</div>
+
+<script>
+const memoryVideo = document.getElementById("memoryVideo");
+
+function startMemories() {
+    document.getElementById("introSection").style.display = "none";
+    document.getElementById("memorySection").style.display = "flex";
+
+    memoryVideo.play().catch(() => {
+        alert("Video load aagala. memories.mp4 file check pannunga!");
+    });
+}
+
+memoryVideo.addEventListener("ended", function() {
+    document.getElementById("memorySection").style.display = "none";
+    document.getElementById("endSection").style.display = "block";
+});
+
+function goNext() {
+    window.location.href = "page4.html";
+}
+</script>
+
+</body>
+</html>

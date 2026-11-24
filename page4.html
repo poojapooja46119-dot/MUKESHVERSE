@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUKESHVERSE - Page 4</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    background:
+        linear-gradient(rgba(8,3,28,0.35), rgba(8,3,28,0.55)),
+        url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1920")
+        center/cover no-repeat;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#d8b4fe 1px, transparent 1px);
+    background-size: 85px 85px, 125px 125px;
+    animation: sparkle 7s linear infinite;
+}
+
+@keyframes sparkle {
+    from { transform: translateY(0); }
+    to { transform: translateY(-45px); }
+}
+
+/* PLANETS */
+
+.planet {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+    z-index: 1;
+}
+
+.planet-one {
+    width: 115px;
+    height: 115px;
+    top: 12%;
+    left: 9%;
+    background: radial-gradient(circle at 30% 30%, #ffe0bd, #dc8baf, #593a9c);
+    box-shadow: 0 0 40px #c084fc;
+}
+
+.planet-two {
+    width: 65px;
+    height: 65px;
+    bottom: 12%;
+    left: 18%;
+    background: radial-gradient(circle at 30% 30%, #c4f1ff, #5586cb, #25245b);
+    box-shadow: 0 0 30px #60a5fa;
+    animation-delay: 2s;
+}
+
+.planet-three {
+    width: 95px;
+    height: 95px;
+    top: 15%;
+    right: 10%;
+    background: radial-gradient(circle at 30% 30%, #ffe8b0, #ef956b, #743c87);
+    box-shadow: 0 0 35px #fbadad;
+    animation-delay: 1s;
+}
+
+.planet-three::after {
+    content: "";
+    position: absolute;
+    width: 145px;
+    height: 34px;
+    border: 5px solid rgba(255,220,190,0.65);
+    border-radius: 50%;
+    top: 30px;
+    left: -25px;
+    transform: rotate(-25deg);
+}
+
+.planet-four {
+    width: 70px;
+    height: 70px;
+    bottom: 12%;
+    right: 17%;
+    background: radial-gradient(circle at 30% 30%, #eddaff, #9065d9, #30205c);
+    box-shadow: 0 0 30px #a78bfa;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(8deg);
+    }
+}
+
+/* SIDE WRITINGS */
+
+.side-wish {
+    position: fixed;
+    z-index: 3;
+    width: 320px;
+    top: 47%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff0ff;
+    font-size: 31px;
+    font-weight: 600;
+    line-height: 1.8;
+    text-shadow:
+        0 0 12px #d8b4fe,
+        0 0 28px #9333ea;
+    animation: glow 3s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+.left-wish {
+    left: 1%;
+}
+
+.right-wish {
+    right: 1%;
+}
+
+.my-dear {
+    display: block;
+    margin-top: 20px;
+    color: #ffc8ec;
+    font-size: 33px;
+    font-weight: bold;
+}
+
+@keyframes glow {
+    from { opacity: 0.8; }
+    to { opacity: 1; }
+}
+
+/* CENTER WRITING */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 4;
+    padding: 20px;
+    text-align: center;
+}
+
+.center-message {
+    max-width: 650px;
+    color: #f3e8ff;
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 2.2;
+    text-shadow:
+        0 0 15px #9333ea,
+        0 0 30px #c084fc;
+    animation: messageGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes messageGlow {
+    from {
+        opacity: 0.8;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.03);
+    }
+}
+
+/* NEXT BUTTON */
+
+.next-btn {
+    position: fixed;
+    z-index: 10;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 16px 35px;
+    border: 1px solid #e5c7ff;
+    border-radius: 35px;
+    background: linear-gradient(45deg, #6d28d9, #c026d3);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #9333ea;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.next-btn:hover {
+    transform: translateX(-50%) scale(1.08);
+    box-shadow: 0 0 35px #d8b4fe;
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+    .side-wish {
+        width: 125px;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .my-dear {
+        font-size: 17px;
+    }
+
+    .planet-one {
+        width: 50px;
+        height: 50px;
+    }
+
+    .planet-two {
+        width: 35px;
+        height: 35px;
+    }
+
+    .planet-three {
+        width: 55px;
+        height: 55px;
+    }
+
+    .planet-four {
+        width: 40px;
+        height: 40px;
+    }
+
+    .center-message {
+        font-size: 17px;
+        line-height: 2;
+        padding: 0 10px;
+    }
+
+    .next-btn {
+        bottom: 6%;
+        padding: 13px 25px;
+        font-size: 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<!-- PLANETS -->
+<div class="planet planet-one"></div>
+<div class="planet planet-two"></div>
+<div class="planet planet-three"></div>
+<div class="planet planet-four"></div>
+
+<!-- LEFT WRITING -->
+<div class="side-wish left-wish">
+    Sirichite iru... 🥰
+    <br>
+    Un smile-ku edhuvum equal illa!
+</div>
+
+<!-- RIGHT WRITING -->
+<div class="side-wish right-wish">
+    Life-ah enjoy pannu...
+    <br>
+    Nadakkuradhu ellame paathukkalaam! ✨
+    <span class="my-dear">My Dearrr! ❤️🫶</span>
+</div>
+
+<!-- CENTER WRITING -->
+<div class="container">
+    <div class="center-message">
+        Eppovum happy-ah iru… 🥰❤️
+        <br>
+        Edhu vandhaalum paathukkalaam…
+        <br>
+        Just enjoyyy pannu! 💗✨🫶
+    </div>
+</div>
+
+<!-- NEXT PAGE BUTTON -->
+<button class="next-btn" onclick="goNext()">
+    NEXT SURPRISE →
+</button>
+
+<script>
+function goNext() {
+    window.location.href = "page5.html";
+}
+</script>
+
+</body>
+</html>

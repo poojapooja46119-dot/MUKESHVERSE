@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUKESHVERSE - Page 8</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Trebuchet MS', sans-serif;
+    background:
+      linear-gradient(rgba(255,255,255,0.12), rgba(255,255,255,0.18)),
+      url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1920")
+      center/cover fixed no-repeat;
+    color: white;
+    text-align: center;
+    padding: 45px 15px;
+}
+
+h1 {
+    font-size: clamp(25px, 5vw, 42px);
+    text-shadow: 0 3px 12px #333;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 17px;
+    margin-bottom: 45px;
+    text-shadow: 0 2px 8px #333;
+}
+
+.gallery {
+    width: 100%;
+    max-width: 950px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 10px;
+}
+
+.photo-card {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(5px);
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.photo-card:hover {
+    transform: scale(1.04);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+}
+
+.next-btn {
+    margin: 45px 0;
+    padding: 15px 38px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.next-btn:hover {
+    transform: scale(1.06);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    padding: 20px;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 15px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 38px;
+    cursor: pointer;
+}
+
+@media(max-width: 600px) {
+    .gallery {
+        gap: 15px;
+        padding: 5px;
+    }
+
+    .photo-card {
+        padding: 6px;
+    }
+
+    .photo-card img {
+        height: 220px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>MUKESH'S CRAZY MEMORIES 😂</h1>
+<p class="subtitle">Two photos... Unlimited memories! 📸</p>
+
+<div class="gallery">
+
+    <!-- MUKESH PHOTO -->
+    <div class="photo-card">
+        <img src="m9.jpeg" alt="Mukesh">
+    </div>
+
+    <!-- POOJA PHOTO -->
+    <div class="photo-card">
+        <img src="m2.jpeg" alt="Pooja">
+    </div>
+
+</div>
+
+<button class="next-btn" onclick="location.href='page9.html'">
+    NEXT SURPRISE ✨ →
+</button>
+
+<div class="lightbox" id="lightbox" onclick="closePhoto()">
+    <span class="close">&times;</span>
+    <img id="largePhoto" src="" alt="Memory">
+</div>
+
+<script>
+document.querySelectorAll(".photo-card img").forEach(function(img) {
+    img.onclick = function() {
+        document.getElementById("largePhoto").src = this.src;
+        document.getElementById("lightbox").style.display = "flex";
+    };
+});
+
+function closePhoto() {
+    document.getElementById("lightbox").style.display = "none";
+}
+
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") closePhoto();
+});
+</script>
+
+</body>
+</html>

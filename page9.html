@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUKESHVERSE - Page 10</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND PHOTO - CHANGE IMAGE NAME HERE */
+.background-photo {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -2;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.58);
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    max-width: 750px;
+    text-align: center;
+    position: relative;
+}
+
+.heading {
+    font-size: 30px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 15px #ffb6d9;
+}
+
+.subtitle {
+    font-size: 15px;
+    margin-bottom: 30px;
+    color: #ffe1ef;
+}
+
+.envelope {
+    font-size: 100px;
+    cursor: pointer;
+    display: inline-block;
+    animation: float 2s infinite ease-in-out;
+    filter: drop-shadow(0 0 18px #ff8fbd);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.open-text {
+    margin-top: 12px;
+    font-size: 17px;
+    color: #ffe4f0;
+}
+
+.letter {
+    display: none;
+    margin-top: 25px;
+    padding: 28px 24px;
+    border-radius: 20px;
+    background: rgba(255, 248, 250, 0.96);
+    color: #44253b;
+    text-align: left;
+    box-shadow: 0 0 35px rgba(255, 160, 205, 0.4);
+    animation: reveal 1s ease;
+}
+
+.letter h2 {
+    text-align: center;
+    color: #c34480;
+    margin-bottom: 20px;
+}
+
+.letter p {
+    font-size: 16px;
+    line-height: 1.9;
+    white-space: pre-line;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.next-btn {
+    display: none;
+    margin: 25px auto 0;
+    border: none;
+    padding: 14px 38px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ff70a6, #ffc2dd);
+    color: #42152d;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff8fbd;
+}
+
+.next-btn:hover {
+    transform: scale(1.08);
+}
+
+@media(max-width: 480px) {
+    .heading { font-size: 24px; }
+    .letter { padding: 20px 16px; }
+    .letter p { font-size: 14px; }
+    .envelope { font-size: 85px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ADD YOUR BACKGROUND PHOTO HERE -->
+<img src="s1.jpeg"
+     class="background-photo"
+     alt="Background">
+
+<div class="overlay"></div>
+
+<div class="container">
+
+    <h1 class="heading">A Little Letter For You 💌</h1>
+    <p class="subtitle">Something from my heart... ❤️</p>
+
+    <div id="envelopeArea" onclick="openLetter()">
+        <div class="envelope">💌</div>
+        <p class="open-text">Tap to open your letter 🥹</p>
+    </div>
+
+    <div class="letter" id="letter">
+        <h2>Dear Mukesh ❤️</h2>
+
+        <p>Firstuh firstuh una paathappo, nee eppovum ippadi dhaan happy-ah iruppiya nu nenachen... 🥰
+
+Neetha first time en kitta vandhu pesuna... School padikkum pothu bus-la irukkumbothu neetha en kitta vandhu pesuna. Naan appolam yaaru kittayum pesa maaten. Yenna naan andha school-ku pudhusu, oru maari nervous-ah iruppen. Appo bus-la irukkumbothu neetha en kitta first time pesuna. First time pesumbodhe romba naal friend kitta pesura maari pesuna... 🫶
+
+Aana idhu unakku nyabagam irukkuma nu theriyala, enakku sariya nyabagam irukku... Appo enakku konjam happy-ah irundhuchu. Paravala, inga ellarum nalla dhaan pesuranga nu nenachen... ❤️
+
+Athukku apram appadiye insta-la pesunom nu nenakkuren, sariya theriyala... But nee evlo kashtapaduva nu naan nenachikooda paakala. Apram enna nambi unnodaya ella feelings-um share panna... 🥺
+
+Idhu maari yaarachu en kitta pesuna enakku enna panradhu nu sariya theriyadhu... Aana edho, "Nee edhuvum feel pannadha, pathukalam, vidu" nu mattum dhaan solla mudiyum... 🫂
+
+Unna edhachum hurt pannirundha illa kashtapaduthura maari naan edhachum pannirundha sorry... Apdi edhachum naan pannirundha nee en kitta sollu. Naan adha change pannikkuren, okay-va? ❤️
+
+Yaaru enna solluvaanga, adha solluvaanga nu nenaikadha. Unakku enna thonutho adha pannu, sariya? Eppovum yaaru pesuradhayum kekkatha. Even naane sonnalum seri, unakku enna thonutho adha pannu... ✨
+
+Ellame oru naal change aagum... Adhe maari heal aagurathukkum time edukkum. Enna, nee paathirundha kooda en Insta bio-la naan potiruppen, "Don't feel, only heal" nu... 🌸
+
+Adhu maari sari aaga time edukkum... Pathukalam, edhu vandhaalum namma paathukalam. ❤️🫶</p>
+    </div>
+
+    <button class="next-btn" id="nextBtn"
+        onclick="window.location.href='page10.html'">
+        NEXT
+    </button>
+
+</div>
+
+<script>
+function openLetter() {
+    document.getElementById("envelopeArea").style.display = "none";
+    document.getElementById("letter").style.display = "block";
+    document.getElementById("nextBtn").style.display = "block";
+}
+</script>
+
+</body>
+</html>

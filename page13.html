@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mukeshverse - Page 13</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: Georgia, serif;
+
+    /* Sunset background */
+    background:
+      linear-gradient(
+        rgba(25, 12, 35, .15),
+        rgba(25, 12, 35, .25)
+      ),
+      url("sunset.jpg") center center / cover no-repeat;
+}
+
+/* Background glow */
+.overlay {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background:
+      radial-gradient(
+        circle at 50% 45%,
+        rgba(255, 210, 170, .12),
+        transparent 55%
+      );
+}
+
+/* Main text */
+h1 {
+    max-width: 1000px;
+    text-align: center;
+    font-size: clamp(32px, 7vw, 75px);
+    line-height: 1.35;
+    font-weight: bold;
+    color: #fff7e9;
+
+    text-shadow:
+      0 0 10px #ffb77e,
+      0 0 25px #ff8b9d,
+      0 0 50px #e9a1d0,
+      0 5px 15px rgba(0,0,0,.5);
+
+    animation: appear 2s ease forwards, glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow:
+          0 0 10px #ffb77e,
+          0 0 25px #ff8b9d,
+          0 0 45px #e9a1d0;
+    }
+    to {
+        text-shadow:
+          0 0 18px #fff1c7,
+          0 0 35px #ff8b9d,
+          0 0 65px #e9a1d0;
+    }
+}
+
+/* Floating sparkles */
+.sparkle {
+    position: fixed;
+    bottom: -30px;
+    color: white;
+    pointer-events: none;
+    animation: float 9s linear infinite;
+    opacity: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% { opacity: .9; }
+    80% { opacity: .8; }
+    100% {
+        transform: translateY(-110vh) rotate(180deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+    <h1>Eppadi irundhuchu namma website? 😍</h1>
+</div>
+
+<script>
+const symbols = ["✨", "✦", "⭐", "💫"];
+
+for (let i = 0; i < 35; i++) {
+    const star = document.createElement("span");
+    star.className = "sparkle";
+    star.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.fontSize = (12 + Math.random() * 22) + "px";
+    star.style.animationDuration = (6 + Math.random() * 8) + "s";
+    star.style.animationDelay = Math.random() * 8 + "s";
+    document.body.appendChild(star);
+}
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUKESHVERSE - Page 7</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+    background:
+      linear-gradient(rgba(3,4,28,.45),rgba(3,4,28,.75)),
+      url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1920")
+      center/cover fixed;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(white 1px, transparent 1px),
+      radial-gradient(#bcaaff 1px, transparent 1px);
+    background-size: 75px 75px, 130px 130px;
+    animation: starMove 25s linear infinite;
+}
+
+@keyframes starMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(-150px); }
+}
+
+.planet {
+    position: fixed;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #f1d1ff, #7952b5, #180e3d);
+    box-shadow: 0 0 55px #a56aff77;
+    opacity: .65;
+}
+
+.p1 { top: 12%; left: -65px; }
+.p2 {
+    bottom: 10%;
+    right: -70px;
+    width: 170px;
+    height: 170px;
+    background: radial-gradient(circle at 30% 30%, #b9eaff, #4164a8, #111b42);
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    width: 92%;
+    margin: auto;
+    padding: 45px 15px;
+}
+
+.page {
+    letter-spacing: 6px;
+    color: #d4baff;
+    font-size: 13px;
+    margin-bottom: 35px;
+}
+
+h1 {
+    font-size: clamp(32px, 6vw, 58px);
+    text-shadow: 0 0 25px #bd8aff;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: clamp(18px, 3vw, 24px);
+    color: #eee6ff;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.gift {
+    font-size: 115px;
+    margin: 25px auto;
+    cursor: pointer;
+    display: inline-block;
+    filter: drop-shadow(0 0 25px #d39aff);
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+button {
+    border: 1px solid #e0caff;
+    border-radius: 40px;
+    padding: 15px 35px;
+    background: linear-gradient(135deg,#7446ce,#c56acb);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 25px #b17aff88;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 40px #d4a2ff;
+}
+
+#reveal {
+    display: none;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: scale(.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.big-title {
+    font-size: clamp(35px, 7vw, 65px);
+    color: #ffd5ff;
+    text-shadow: 0 0 20px #e17cff, 0 0 45px #9a5bff;
+    margin: 20px 0;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 15px #e17cff; }
+    to { text-shadow: 0 0 40px #ff9bdf, 0 0 65px #a56aff; }
+}
+
+.photo {
+    width: min(300px, 80%);
+    height: 300px;
+    object-fit: cover;
+    border-radius: 25px;
+    border: 3px solid #d9b4ff;
+    box-shadow: 0 0 35px #ad72ff;
+    margin: 20px auto;
+    display: block;
+}
+
+.next {
+    margin: 25px auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+<div class="planet p1"></div>
+<div class="planet p2"></div>
+
+<div class="container">
+
+    <div class="page">MUKESHVERSE • PAGE 7</div>
+
+    <div id="intro">
+
+        <h1>Mukeshhhh... 👀</h1>
+
+        <div class="message">
+            Unakku naan oru periya gift vechiruken... 🎁<br>
+            Open panni paaru! 🤭
+        </div>
+
+        <div class="gift" onclick="openGift()">🎁</div>
+
+        <br>
+
+        <button onclick="openGift()">OPEN YOUR GIFT ✨</button>
+
+    </div>
+
+    <div id="reveal">
+
+        <div style="font-size:75px;">🎉🎁✨</div>
+
+        <h1 class="big-title">
+            SURPRISEEE!
+        </h1>
+
+        <h1 style="font-size:clamp(28px,5vw,48px);">
+            NANAEY ORU PERIYA GIFT-U DHAAN! 🤣❤️
+        </h1>
+
+        <p class="message">
+            Enna pa gift expect pannitu irundhiya? 😂<br>
+            Unakku kidaicha biggest gift naan dhaan! 😎
+        </p>
+
+        <!-- Replace gift-photo.jpg with your photo filename -->
+        <img class="photo" src="m7.jpeg" alt="Your special gift photo">
+
+        <button class="next" onclick="goNext()">
+            NEXT SURPRISE →
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+function openGift() {
+    document.getElementById("intro").style.display = "none";
+    document.getElementById("reveal").style.display = "block";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function goNext() {
+    window.location.href = "page8.html";
+}
+</script>
+
+</body>
+</html>
